@@ -2201,7 +2201,7 @@ spawn(function()
 				Unhide()
 				ButtonDebounceH = true
 				delay(1, function()
-					ButtonDebounceH = false
+					--ButtonDebounceH = false
 				end)
 			else
 				Hidden = true
