@@ -2189,17 +2189,20 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 	end
 end)
 
-UserInputService.InputBegan:Connect(function(input, processed)
-	if (input.KeyCode == Enum.KeyCode.LeftAlt and not processed) then
-		if Debounce then return end
-		if Hidden then
-			Hidden = false
-			Unhide()
-		else
-			Hidden = true
-			Hide()
+spawn(function()
+	task.wait(3)
+	UserInputService.InputBegan:Connect(function(input, processed)
+		if (input.KeyCode == Enum.KeyCode.LeftAlt and not processed) then
+			if Debounce then return end
+			if Hidden then
+				Hidden = false
+				Unhide()
+			else
+				Hidden = true
+				Hide()
+			end
 		end
-	end
+	end)
 end)
 
 for _, TopbarButton in ipairs(Topbar:GetChildren()) do
