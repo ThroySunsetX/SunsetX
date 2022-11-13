@@ -1841,8 +1841,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Toggle.UIStroke.Transparency = 1
 			Toggle.Title.TextTransparency = 1
 			Toggle.Switch.BackgroundColor3 = SelectedTheme.ToggleBackground
-			
-			local ToggleDebounce = false
 
 			if SelectedTheme ~= RayfieldLibrary.Theme.Default then
 				Toggle.Switch.Shadow.Visible = false
@@ -1873,10 +1871,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 			end)
 
 			Toggle.Interact.MouseButton1Click:Connect(function()
-				if not ToggleDebounce then
-					ToggleDebounce = true
+				if ToggleSettings.Debounce == false then
+					ToggleSettings.Debounce = true
 					delay(1, function()
-						ToggleDebounce = false
+						ToggleSettings.Debounce = false
 					end)
 					if ToggleSettings.CurrentValue then
 						ToggleSettings.CurrentValue = false
