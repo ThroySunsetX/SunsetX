@@ -1110,7 +1110,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 				TweenService:Create(KeyMain.NoteMessage, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
 				TweenService:Create(KeyMain.Hide, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
 				wait(0.51)
-				RayfieldLibrary:Destroy()
 				KeyUI:Destroy()
 			end)
 		else
@@ -1874,7 +1873,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 						delay(1, function()
 							ToggleSettings.Debounce = false
 						end)
-						task.wait(0.1)
 						if ToggleSettings.CurrentValue then
 							ToggleSettings.CurrentValue = false
 							TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
