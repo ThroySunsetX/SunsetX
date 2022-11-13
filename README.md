@@ -2159,11 +2159,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 	return Window
 end
 
-
-function RayfieldLibrary:Destroy()
-	Rayfield:Destroy()
-end
-
 Topbar.ChangeSize.MouseButton1Click:Connect(function()
 	if Debounce then return end
 	if Minimised then
