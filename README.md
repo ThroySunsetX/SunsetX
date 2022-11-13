@@ -1874,6 +1874,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 						delay(1, function()
 							ToggleSettings.Debounce = false
 						end)
+						task.wait(0.1)
 						if ToggleSettings.CurrentValue then
 							ToggleSettings.CurrentValue = false
 							TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
@@ -2196,13 +2197,9 @@ spawn(function()
 			if Hidden then
 				Hidden = false
 				Unhide()
-				delay(5, function()
-					ButtonDebounceH = false
-				end)
 			else
 				Hidden = true
 				Hide()
-				ButtonDebounceH = true
 			end
 		end
 	end)
