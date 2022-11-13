@@ -115,8 +115,6 @@ local CoreGui = game:GetService("CoreGui")
 -- Interface Management
 local Rayfield = game:GetObjects("rbxassetid://10804731440")[1]
 
-
-
 if gethui then
 	Rayfield.Parent = gethui()
 elseif syn.protect_gui then 
@@ -155,7 +153,6 @@ local TabList = Main.TabList
 
 Rayfield.DisplayOrder = 100
 LoadingFrame.Version.Text = Release
-
 
 -- Variables
 
@@ -2199,13 +2196,13 @@ spawn(function()
 			if Hidden then
 				Hidden = false
 				Unhide()
-				ButtonDebounceH = true
 				delay(1, function()
 					ButtonDebounceH = false
 				end)
 			else
 				Hidden = true
 				Hide()
+				ButtonDebounceH = true
 			end
 		end
 	end)
