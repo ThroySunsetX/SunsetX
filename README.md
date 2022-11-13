@@ -2196,7 +2196,7 @@ spawn(function()
 			if Hidden then
 				Hidden = false
 				Unhide()
-				delay(1, function()
+				delay(5, function()
 					ButtonDebounceH = false
 				end)
 			else
